@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "config:base",
+    ":timezone(Asia/Tokyo)",
+    ":semanticCommitTypeAll(build)",
+    ":automergePatch",
+    ":automergeBranch",
+    ":maintainLockFilesWeekly",
+    ":prNotPending",
+    ":label(dependencies)"
+  ],
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "extends": [":automergeMinor"],
+      "separateMinorPatch": false,
+      "matchPackagePatterns": ["*"],
+      "matchCurrentVersion": ">=1.0.0"
+    },
+    {
+      "extends": [":automergeDisabled", "packages:linters"],
+      "matchPackagePatterns": ["\\bprettier\\b", "\\bstandard\\b", "\\bxo\\b"],
+      "groupName": "linters"
+    }
+  ]
+}
