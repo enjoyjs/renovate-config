@@ -5,7 +5,6 @@
     ":semanticCommitTypeAll(build)",
     ":automergePatch",
     ":automergeBranch",
-    ":maintainLockFilesWeekly",
     ":prNotPending",
     ":label(dependencies)"
   ],
