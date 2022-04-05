@@ -13,8 +13,8 @@
     {
       "extends": [":automergeMinor"],
       "separateMinorPatch": false,
-      "matchPackagePatterns": ["*"],
-      "matchCurrentVersion": ">=1.0.0"
+      "matchCurrentVersion": ">=1.0.0",
+      "excludePackageNames": ["typescript"]
     },
     {
       "extends": [":automergeDisabled", "packages:linters"],
